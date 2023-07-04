@@ -27,8 +27,17 @@ createApp({
 
            ],
 
-           newToDo: ''
+           newTask: ''
+            
+           
 
+        }
+    },
+    methods: {
+        addTask(){
+            this.toDoList.push({
+                newTask: '',
+            });
         }
     }
 
