@@ -27,17 +27,30 @@ createApp({
 
            ],
 
-           newTask: ''
+           newTask: {
+            text: '',
+            done: false
+           }
             
            
 
         }
     },
     methods: {
-        addTask(){
-            this.toDoList.push({
-                newTask: '',
-            });
+        addTask(text){
+
+             const newObjTask = {
+                 ...this.newTask
+             };
+             this.toDoList.push(newObjTask);
+             this.newTask.text = '';
+            
+                
+        },
+
+        removeTask(i){
+            console.log('cliccato task');
+            this.toDoList.splice(i, 1);
         }
     }
 
